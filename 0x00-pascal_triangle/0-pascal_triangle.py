@@ -1,15 +1,9 @@
 #!/usr/bin/python3
-"""
-Create a function def pascal_triangle(n):
-that returns a list of lists of integers representing
-the Pascal’s triangle of n:
-    - Returns an empty list if n <= 0
-    - You can assume n will always be an integer
-"""
+"""A pascal triangle"""
 
 def pascal_triangle(n: int = None) -> list[list[int]]:
     """
-    Compute a 2D list of elements representing Pascal's triangle for N.
+    create 2D list of elements representing Pascal's triangle for N.
     
     :param n: The height of Pascal's triangle.
     :type n: int
