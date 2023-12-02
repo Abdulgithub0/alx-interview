@@ -7,10 +7,11 @@ the Pascal’s triangle of n:
     - You can assume n will always be an integer
 """
 
+
 def pascal_triangle(n):
     """
     Compute a 2D list of elements representing Pascal's triangle for N.
-    
+
     :param n: The height of Pascal's triangle.
     :type n: int
     :return: A list of lists representing Pascal's triangle.
