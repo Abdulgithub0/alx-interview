@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """A pascal triangle"""
 
 def pascal_triangle(n: int = None) -> list[list[int]]:
