@@ -1,27 +1,29 @@
 #!/usr/bin/python3
-"""A pascal triangle"""
+"""Pascal triangle"""
 
-def pascal_triangle(n: int = None) -> list[list[int]]:
+
+def pascal_triangle(n):
+    """Returns a list of lists of integers 
+    representing the Pascal’s triangle of n:
     """
-    create 2D list of elements representing Pascal's triangle for N.
-    
-    :param n: The height of Pascal's triangle.
-    :type n: int
-    :return: A list of lists representing Pascal's triangle.
-    :rtype: list[list[int]]
-    """
-    if not n or n <= 0:
+
+    if n <= 0:
         return []
 
-    grid: list[list[int]] = [[1]]
+    
+    """ initialize an empty resulting array """
+    pascal = [[] for idx in range(n)]
 
-    for i in range(1, n):
-        new: list[int] = [1]
+    for li in range(n):
+        for col in range(li+1):
+            if(col < li):
+                if(col == 0):
+                    """ the first column is always set to 1 """
+                    pascal[li].append(1)
+                else:
+                    pascal[li].append(pascal[li-1][col] + pascal[li-1][col-1])
+            elif(col == li):
+                """ the diagonal is always set to 1 """
+                pascal[li].append(1)
 
-        for j in range(1, i):
-            new.append(grid[i - 1][j] + grid[i - 1][j - 1])
-
-        new.append(1)
-        grid.append(new)
-
-    return grid
+    return pascal
