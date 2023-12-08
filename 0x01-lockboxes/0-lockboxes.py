@@ -11,9 +11,9 @@ def canUnlockAll(boxes):
     # there is always a key to open box 0
     to_be_open_boxes.add(0)
 
-    while to_be_open_boxes:
+    while to_be_open_boxes and len(keys_store) < len(boxes):
         current_box = to_be_open_boxes.pop()
-        # boundary check
+        # key boundary check
         if 0 <= current_box < len(boxes):
             if current_box not in keys_store:
                 keys_store.add(current_box)
@@ -21,10 +21,3 @@ def canUnlockAll(boxes):
                     if key not in keys_store:
                         to_be_open_boxes.add(key)
     return len(keys_store) == len(boxes)
-
-
-"""
-print(canUnlockAll([ [10, 3, 8, 9, 6, 5, 8, 1], [8, 5, 3, 7, 1, 8, 6],
-      [5, 1, 9, 1], [], [6, 6, 9, 4, 3, 2, 3, 8, 5], [9, 4],
-      [4, 2, 5, 1, 1, 6, 4, 5, 6], [9, 5, 8, 8], [6, 2, 8, 6] ]))
-"""
