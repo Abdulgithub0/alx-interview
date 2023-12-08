@@ -4,7 +4,7 @@
 
 def canUnlockAll(boxes):
     """Determine if all boxes can be opened."""
-    # I used 'set' to duplication of keys and also speed up of lookup time
+    # I used 'set' to avoid duplication of keys and also speed up of key lookup
     keys_store = set()
     to_be_open_boxes = set()
 
@@ -22,4 +22,9 @@ def canUnlockAll(boxes):
                         to_be_open_boxes.add(key)
     return len(keys_store) == len(boxes)
 
-#print(canUnlockAll([ [10, 3, 8, 9, 6, 5, 8, 1], [8, 5, 3, 7, 1, 8, 6], [5, 1, 9, 1], [], [6, 6, 9, 4, 3, 2, 3, 8, 5], [9, 4], [4, 2, 5, 1, 1, 6, 4, 5, 6], [9, 5, 8, 8], [6, 2, 8, 6] ]))
+
+"""
+print(canUnlockAll([ [10, 3, 8, 9, 6, 5, 8, 1], [8, 5, 3, 7, 1, 8, 6],
+      [5, 1, 9, 1], [], [6, 6, 9, 4, 3, 2, 3, 8, 5], [9, 4],
+      [4, 2, 5, 1, 1, 6, 4, 5, 6], [9, 5, 8, 8], [6, 2, 8, 6] ]))
+"""
