@@ -17,5 +17,5 @@ def minOperations(n):
     slope = int((12 - 9) / (7 - 6))
     # find b = y - mx
     y_intercept = 9 - 3 * 6
-    # so for any given dependend n, there is:
+    # so for any given dependent n, there is:
     return int((n - y_intercept) / slope)
