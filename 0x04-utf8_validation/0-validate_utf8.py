@@ -7,7 +7,7 @@
 def validUTF8(data):
     """Return true if data contains
        valid utf-8 characters or false otherwise
-       It assume each character in data parameter is 1 byte(ASCII)
+       It assume each character in data parameter is 1 byte(like ASCII)
     """
     for char in data:
         if char >> 7 == 0:
